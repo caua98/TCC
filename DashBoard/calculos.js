@@ -1,46 +1,51 @@
-const form = document.getElementById('form');
+function calculateIMC() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    
+    if (weight && height) {
+        const imc = weight / (height * height);
+        const valueElement = document.getElementById('value');
+        const descriptionElement = document.getElementById('description');
 
+        valueElement.textContent = imc.toFixed(2);
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+        if (imc < 18.5) {
+            descriptionElement.textContent = 'Abaixo do peso';
+        } else if (imc < 24.9) {
+            descriptionElement.textContent = 'Peso normal';
+        } else if (imc < 29.9) {
+            descriptionElement.textContent = 'Sobrepeso';
+        } else {
+            descriptionElement.textContent = 'Obesidade';
+        }
 
- 
-
-    const weight = document.getElementById('weight').value; 
-    const height = document.getElementById('height').value; 
-
-    const bmi = (weight / (height * height)).toFixed(2);
-
-    const value = document.getElementById('value');
-    let description = '';
-
-    value.classList.add('attention');
-
-    document.getElementById('infos').classList.remove('hidden');
-
-    if(bmi < 18.5){
-        description = 'Cuidado! Você está abaixo do peso!'
-    } else if (bmi >= 18.5 && bmi <= 25 ) {
-        description = "Você está no peso ideal!";
-        value.classList.remove('attention');
-        value.classList.add('normal');
-    } else if (bmi > 25 && bmi <= 30) {
-        description = "Cuidado! Você está com sobrepeso!";
-    } else if (bmi > 30 && bmi <= 35) {
-        description = "Cuidado! Você está com obesidade moderada!";
-    } else if (bmi > 35 && bmi <= 40) {
-        description = "Cuidado! Você está com obesidade severa!";
-    }else {
-        description = "Cuidado! Você está com obesidade morbida!";
+        document.getElementById('infos').classList.remove('hidden');
+    } else {
+        alert('Por favor, insira valores válidos.');
     }
+}
 
-    value.textContent = bmi.replace('.', '.');
-    document.getElementById('description').textContent = description;
+function calculateTMB() {
+    const gender = document.getElementById('gender').value;
+    const age = parseFloat(document.getElementById('age').value);
+    const weight = parseFloat(document.getElementById('weight2').value);
+    const height = parseFloat(document.getElementById('height2').value);
+    const activityLevel = parseFloat(document.getElementById('activity_level').value);
+    
+    if (age && weight && height && activityLevel) {
+        let tmb;
+        
+        if (gender === 'male') {
+            tmb = 88.36 + (13.4 * weight) + (4.8 * height * 100) - (5.7 * age);
+        } else {
+            tmb = 447.6 + (9.2 * weight) + (3.1 * height * 100) - (4.3 * age);
+        }
 
-    //Impede a visualização do código-fonte da página
-    document.oncontextmenu = function(e) {
-        e.preventDefault();
-        alert('Desculpe, mas a visualização do código-fonte da página está desabilitada.');
-      };
+        const totalTMB = tmb * activityLevel;
 
-});
+        document.getElementById('value2').textContent = totalTMB.toFixed(2);
+        document.getElementById('infos2').classList.remove('hidden');
+    } else {
+        alert('Por favor, preencha todos os campos corretamente.');
+    }
+}
