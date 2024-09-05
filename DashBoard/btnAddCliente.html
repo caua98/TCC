@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="btnAddCli.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <title>Nutribox</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/PlogoSFundo.png">
+                    <h2>NUTRI<span class="danger">BOX</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Inicio</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Clientes</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Pedidos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Estatisticas</h3>
+                </a>
+                <a href="calc.html">
+                    <span class="material-icons-sharp">calculate</span>
+                    <h3>Calculadoras</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Produtos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Alertas</h3>
+                </a>
+                <a href="opcoes.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Opções</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Adicionar Produto</h3>
+                </a>
+                <a href="login.html">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Sair</h3>
+                </a>
+            </div>
+        </aside>
+        <!-------------Comeco do main----------->
+        <main>
+            <h1>Novo Cliente</h1>
+            <div class="insights">
+
+                <form class="sign-in__form" method="post" action="">
+                    
+
+                    <div class="info">
+
+                        <label for="Nome">Nome Completo:</label>
+                        <input type="text" value="" placeholder="Nome:" id="nome">
+                        <label for="Nome">Email:</label>
+                        <input type="text" value="" placeholder="Email:" id="email">
+                        <label for="genero">Selecione o Gênero:</label>
+
+                        <select name="genero" id="genero" aria-placeholder="Gênero:">
+                            <option value="" selected="true">Selecione uma opção</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="prefiro_nao_informar">Prefiro não informar</option>
+                        </select><br>
+
+                        <label for="objetivo">Selecione o objetivo:</label>
+                        <select name="objetivo" id="objetivo" aria-placeholder="Objetivo:" data-default>
+                            <option value="selecione_opcao">Selecione uma opção</option>
+                            <option value="perder_peso">Ganhar Peso</option>
+                            <option value="ganhar_peso">Perder Peso</option><br>
+                        </select><br>
+
+                        <label for="texto">Observações / condições especiais:</label><br>
+                        <textarea name="texto" id="texto" cols="30" rows="10"
+                            placeholder="Insira aqui as informações"></textarea>
+                    </div>
+
+                    <div class="infoCalculo">
+                        <label for="idade">Idade:</label>
+                        <input type="number" value="" id="idade" name="idade" placeholder="Idade:">
+                        <label for="peso">Peso:</label>
+                        <input type="number" value="" placeholder="Peso:" id="peso" name="peso">
+                        <label for="altura">Altura:</label>
+                        <input type="number" value="" placeholder="Altura:" id="altura" name="altura"><br>
+                        <button class="button" name="addCliente" id="addCliente">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-------------FIM DO MAIN------------->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+               
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Opa, <b>Muliro</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/profile-1.jpg" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

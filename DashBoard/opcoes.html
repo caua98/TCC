@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutribox</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" 
+    rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./calc.css">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/PlogoSFundo.png">
+                    <h2>NUTRI<span class="danger">BOX</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Inicio</h3>
+                </a>
+                <a href="btnAddCliente.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Clientes</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Pedidos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Estatisticas</h3>
+                </a>
+                <a href="calc.html">
+                    <span class="material-icons-sharp" class="active">calculate</span>
+                    <h3>Calculadoras</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Produtos</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Alertas</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Opções</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Adicionar Produto</h3>
+                   
+               
+                </a>
+                <a href="login.html">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Sair</h3>
+                </a>
+            </div>
+        </aside>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Opa, <b>Muliro</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/profile-1.jpg" >
+                    </div>
+                </div>
+            </div>
+            
+            <main id="container">
+                
+
+                <section id="calculator">
+                    <form id="form">
+                        <h1 id="title">
+                            Calculadora - IMC 
+                        </h1>
+
+                         <div class="input-box">
+                            <label for="weight">
+                                Peso em Kg
+                            </label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-weight-hanging"></i>
+                                <input type="number" id="weight" required>
+                                <span>  
+                                    Kg
+                                </span>
+                            </div>
+                         </div>
+
+                         <div class="input-box">
+                            <label for="height">
+                                Altura em metros 
+                            </label>
+                            <div class="input-field">
+                                <i class="fa-solid fa-ruler"></i>
+                                <input type="number" id="height"  step="0.01" required>
+                                <span>
+                                    m
+                                </span>
+                            </div>
+                         </div>
+
+                         <button id="calculate">
+                            Calcular
+                         </button>
+                    </form>
+                    <div id="infos" class="hidden">
+                        <div id="results">
+                            <div id="bmi">
+                                <span id="value">55</span>
+                                <span>Seu IMC</span>
+                            </div>
+                            <div id="description">
+                                <span>55</span>
+                            </div>
+                        </div>
+                         <div id="more_info">
+                            <a href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm">
+                                Mais informações sobre IMC
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                         </div>
+
+                    </div>
+                </section>
+
+            </main>
+            <script src="./index.js"></script>
+            <script src="./calculos.js"></script>
+        </body>
+        </html>
+            
